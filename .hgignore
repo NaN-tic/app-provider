@@ -1,0 +1,8 @@
+node_modules/
+resources/
+www/
+src/providers/
+src/models/json/
+src/models/infinite-list/
+src/models/menu/
+src/models/login-tryton/

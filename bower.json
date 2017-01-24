@@ -1,0 +1,20 @@
+{
+  "name": "tryton-provider",
+  "description": "Tryton provider",
+  "main": "index.js",
+  "authors": [
+    "nan-tic"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "tryton"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
