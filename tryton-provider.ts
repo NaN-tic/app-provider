@@ -30,24 +30,25 @@ export class TrytonProvider {
    *                    More info about the format of the JSON please look
    *                    at the encode-json-read.ts file
    */
-  
-  search(json) {
-  	console.log('Started search request for ', json);
-  	return this.tryton_session.rpc('model.app.proxy.app_search', [json])
-  	.map(res => { return JSON.parse(res) })
-  	.catch(this._handle_error);
+
+  public search(json) {
+    console.log('Started search request for ', json);
+    return this.tryton_session.rpc('model.app.proxy.app_search', [json])
+      .map(res => { return JSON.parse(res) })
+      .catch(this._handle_error);
   }
   /**
    * Creates or updates new records in tryton
    * @param {JSON} json JSON with the values to create/update
-   *                    For more info please look at encode-json-write.ts              
+   *                    For more info please look at encode-json-write.ts
    */
-  write(json) {
+  public write(json) {
     console.log('Started write request for ', json);
     return this.tryton_session.rpc('model.app.proxy.app_write', [json])
-    .map(res => { 
-      return JSON.parse(res ? null : 'ok') })
-    .catch(this._handle_error);
+      .map(res => {
+        return JSON.parse(res ? null : 'ok')
+      })
+      .catch(this._handle_error);
   }
 
 
@@ -56,7 +57,7 @@ export class TrytonProvider {
    * @param {Observable} error Error ocurred
    */
   private _handle_error(error) {
-  	console.log("Error encountered", error);
-  	return Observable.throw(error)
+    console.log("Error encountered", error);
+    return Observable.throw(error)
   }
 }
