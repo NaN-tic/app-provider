@@ -46,7 +46,10 @@ export class TrytonProvider {
     console.log('Started write request for ', json);
     return this.tryton_session.rpc('model.app.proxy.app_write', [json])
       .map(res => {
-        return JSON.parse(res ? null : 'ok')
+        console.log("got response", res)
+        if (res != 'AK')
+          return JSON.parse(res);
+        return res
       })
       .catch(this._handle_error);
   }
