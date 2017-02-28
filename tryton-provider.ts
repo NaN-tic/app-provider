@@ -54,6 +54,15 @@ export class TrytonProvider {
       .catch(this._handle_error);
   }
 
+  public rpc_call(method, data) {
+    console.log("Started RPC call to ", method, " with data: ", data)
+    return this.tryton_session.rpc(method, data)
+      .map(res => {
+        console.log("Received response")
+        return res
+      })
+      .catch(this._handle_error);
+  }
 
   /**
    * Handles errors
