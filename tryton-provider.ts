@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SessionService } from 'angular2-tryton';
+import { SessionService } from 'angular2-trytoni-4.0';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 
